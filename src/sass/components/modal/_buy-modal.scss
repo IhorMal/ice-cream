@@ -1,0 +1,142 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  text-align: left;
+}
+
+.modal-form__group {
+  margin-bottom: 15px;
+}
+
+.modal-form__text {
+  display: block;
+
+  padding-left: 5px;
+
+  @include font-size(13, 16);
+
+  color: $secondary-txt-color;
+}
+
+.modal-form__input-container {
+  position: relative;
+
+  display: block;
+}
+
+.modal-form__input {
+  display: block;
+
+  width: 100%;
+
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 40px;
+  padding-right: 10px;
+
+  @include font-size(14, 20);
+
+  border: 1px solid $secondary-accen-color;
+  border-radius: 6px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  outline: transparent;
+  background-color: $main-bg-color;
+
+  cursor: pointer;
+
+  transition: background-color $transition-timing $transition-function,
+    border-color $transition-timing $transition-function,
+    box-shadow $transition-timing $transition-function;
+
+  &:hover,
+  &:focus {
+    background-color: $secondary-bg-color;
+    border-color: $main-accent-color;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
+
+  &::placeholder {
+    @include font-size(14, 20);
+
+    color: rgba(180, 17, 55, 0.4);
+  }
+}
+
+.modal-form__icon {
+  position: absolute;
+  top: 50%;
+  left: 13px;
+
+  color: $secondary-txt-color;
+  fill: currentColor;
+  transform: translateY(-50%);
+
+  transition: color $transition-timing $transition-function,
+    transform $transition-timing $transition-function;
+
+  .modal-form__group:focus-within & {
+    color: $main-accent-color;
+
+    transform: translateY(-50%);
+  }
+}
+
+.modal-form__textarea {
+  display: block;
+
+  width: 100%;
+
+  padding: 8px 10px;
+  margin-bottom: 10px;
+
+  @include font-size(14, 20);
+
+  resize: none;
+
+  border: 1px solid $secondary-accen-color;
+  border-radius: 6px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  outline: transparent;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  transition: background-color $transition-timing $transition-function,
+    border-color $transition-timing $transition-function,
+    box-shadow $transition-timing $transition-function;
+
+  &::placeholder {
+    @include font-size(14, 20);
+
+    color: rgba(180, 17, 55, 0.4);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $secondary-bg-color;
+    border-color: $main-accent-color;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
+}
+
+.modal-form__group-textarea {
+  margin-bottom: 20px;
+}
+
+.form__button {
+  display: block;
+
+  min-width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,142 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #ffb8ca80;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity $transition-timing $transition-function,
+    visibility $transition-timing $transition-function;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  color: $main-accent-color;
+
+  background-color: transparent;
+  border-radius: 50%;
+
+  border-width: 0;
+  cursor: pointer;
+
+  transition: color $transition-timing $transition-function,
+    background-color $transition-timing $transition-function,
+    transform $transition-timing $transition-function;
+
+  &:hover,
+  &:focus {
+    color: $white-txt-color;
+    background-color: $main-accent-color;
+
+    transform: scale(1.1);
+  }
+}
+
+.modal__close-button-icon {
+  stroke: currentColor;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: calc((100% + (100vw - 100%)) / 2);
+  z-index: 210;
+
+  width: calc(100% - 30px);
+  max-width: 480px;
+  max-height: 100vh;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  text-align: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  overflow-y: auto;
+
+  transform: translate(-50%, -50%);
+
+  background-position: top 15% left, top 15% right;
+  background-size: 146px, 146px;
+  background-repeat: no-repeat;
+
+  background-image: url('../images/about/bg/mobile/bg-mobile-left.png'),
+    url('../images/about/bg/mobile/bg-mobile-right.png');
+  background-image: url('../images/about/bg/mobile/bg-mobile-left.webp'),
+    url('../images/about/bg/mobile/bg-mobile-right.webp');
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../images/about/bg/mobile/bg-mobile-left@2x.png'),
+      url('../images/about/bg/mobile/bg-mobile-right@2x.png');
+    background-image: url('../images/about/bg/mobile/bg-mobile-left@2x.webp'),
+      url('../images/about/bg/mobile/bg-mobile-right@2x.webp');
+  }
+
+  @media (min-device-pixel-ratio: 3),
+    (min-resolution: 288dpi),
+    (min-resolution: 3dppx) {
+    background-image: url('../images/about/bg/mobile/bg-mobile-left@3x.png'),
+      url('../images/about/bg/mobile/bg-mobile-right@3x.png');
+    background-image: url('../images/about/bg/mobile/bg-mobile-left@3x.webp'),
+      url('../images/about/bg/mobile/bg-mobile-right@3x.webp');
+  }
+
+  border-radius: 24px;
+  background-color: $main-bg-color;
+  box-shadow: 0 10px 10px -0.5px rgba(228, 109, 139, 0.2);
+
+  transition: opacity $transition-timing $transition-function,
+    visibility $transition-timing $transition-function;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.modal__title {
+  @extend %no-margin;
+
+  display: block;
+  margin-bottom: 30px;
+
+  text-align: center;
+
+  font-family: $secondary-font;
+  font-weight: 400;
+  @include font-size(24, 26);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: $main-accent-color;
+}

@@ -1,0 +1,87 @@
+.button {
+  @extend %link-decor;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 62px;
+  height: 44px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  font-family: $main-font;
+  font-weight: 700;
+  @include font-size(16, 21);
+
+  border-width: 0;
+  border-radius: 25px;
+
+  cursor: pointer;
+
+  transition: background-color $transition-timing $transition-function,
+    transform $transition-timing $transition-function,
+    box-shadow $transition-timing $transition-function;
+
+  &--white {
+    color: $main-accent-color;
+    background-color: $button-white-bg-color;
+
+    &:hover,
+    &:focus {
+      background-color: $button-white-hover-bg-color;
+
+      transform: scale(1.05);
+
+      box-shadow: 4px 4px 14px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    &_arrowed {
+      &::after {
+        content: '';
+
+        display: inline-block;
+        width: 8px;
+        height: 10px;
+
+        margin-left: 13px;
+
+        background-image: url('../images/svg/arrow-red.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+
+  &--red {
+    color: $white-txt-color;
+    background-color: $main-accent-color;
+
+    &:hover,
+    &:focus {
+      background-color: $button-red-hover-bg-color;
+
+      transform: scale(1.05);
+
+      box-shadow: 4px 4px 14px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    &_arrowed {
+      &::after {
+        content: '';
+
+        display: inline-block;
+        width: 8px;
+        height: 10px;
+
+        margin-left: 13px;
+
+        background-image: url('../images/svg/arrow-white.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+}

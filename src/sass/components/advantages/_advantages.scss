@@ -1,0 +1,153 @@
+.advantages {
+  @extend .section;
+
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 30px;
+    padding-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-bottom: 32px;
+  }
+
+  background-color: $secondary-bg-color;
+}
+
+.advantages__containet {
+  @extend .container;
+}
+
+.advantages__list {
+  @extend %list;
+  @extend %no-margin;
+
+  padding: 0;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: -8px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin: -50px;
+  }
+}
+
+.advantages__item {
+  width: 230px;
+
+  &::before {
+    content: '';
+
+    display: block;
+
+    margin-bottom: 16px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 36px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &--milk {
+    &::before {
+      width: 33px;
+      height: 50px;
+
+      background-image: url('../images/svg/milk.svg');
+    }
+  }
+
+  &--apples {
+    &::before {
+      width: 50px;
+      height: 50px;
+
+      background-image: url('../images/svg/apples.svg');
+    }
+  }
+
+  &--icecream {
+    &::before {
+      width: 44px;
+      height: 50px;
+
+      background-image: url('../images/svg/icecream.svg');
+    }
+  }
+
+  @media screen and (max-width: 767.98px) {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 16px * 4) / 4);
+    margin: 8px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 100px * 3) / 3);
+    margin: 50px;
+  }
+}
+
+.advantages__icon {
+  display: block;
+
+  margin-bottom: 16px;
+
+  fill: $secondary-accen-color;
+}
+
+.advantages__quantity {
+  @extend %no-margin;
+
+  margin-bottom: 16px;
+
+  font-family: $secondary-font;
+  font-weight: 400;
+  @include font-size(36, 41);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: $main-accent-color;
+
+  @media screen and (min-width: 768px) {
+    @include font-size(48, 66);
+    text-transform: lowercase;
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include font-size(58, 66);
+    text-transform: lowercase;
+  }
+}
+
+.advantages__text {
+  @extend %no-margin;
+
+  font-weight: 700;
+  @include font-size(12, 20);
+
+  @media screen and (min-width: 768px) {
+    @include font-size(14, 24);
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include font-size(16, 28);
+  }
+}

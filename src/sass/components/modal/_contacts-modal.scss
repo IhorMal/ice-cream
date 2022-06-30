@@ -1,0 +1,142 @@
+.contacts__wrapper {
+  position: relative;
+}
+
+.contacts__list {
+  position: relative;
+
+  @extend %list;
+}
+
+.contacts__item {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity $transition-timing $transition-function;
+
+  &.contacts-is-visible {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  &:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+  }
+}
+
+.contacts__title {
+  @extend %no-margin;
+
+  display: block;
+
+  flex-grow: 1;
+
+  margin-bottom: 12px;
+
+  text-align: center;
+
+  font-family: $main-font;
+  @include font-size(18, 24);
+  text-transform: uppercase;
+
+  color: $mobile-menu-bg-color;
+}
+
+.contacts__contacts {
+  list-style: circle;
+
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  text-align: left;
+}
+
+.contacts__contacts-item {
+  @include font-size(16, 22);
+
+  color: $main-txt-color;
+}
+
+.contacts__contacts-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.contacts__contacts-action {
+  display: block;
+}
+
+.contacts__contacts-link {
+  @extend %link-decor;
+
+  display: inline-block;
+
+  @include font-size(14, 16);
+
+  color: $secondary-txt-color;
+
+  transition: color $transition-timing $transition-function,
+    transform $transition-timing $transition-function;
+
+  &:hover,
+  &:focus {
+    color: $main-accent-color;
+
+    transform: scale(1.02);
+  }
+}
+
+.contacts__map {
+  border-radius: 16px;
+
+  width: 100%;
+}
+
+.contacts__next-button {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  z-index: 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+
+  color: $main-accent-color;
+  background-color: $secondary-bg-color;
+
+  border-radius: 50%;
+  cursor: pointer;
+
+  transform-origin: left;
+  transform: translateX(-50%);
+
+  transition: color $transition-timing $transition-function,
+    background-color $transition-timing $transition-function,
+    transform $transition-timing $transition-function;
+
+  &:hover {
+    color: $white-txt-color;
+    background-color: $main-accent-color;
+
+    transform: scale(1.05) translateX(-50%);
+  }
+}
+
+.contacts__next-button-icon {
+  fill: currentColor;
+}

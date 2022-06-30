@@ -1,0 +1,58 @@
+// ------------- UTILITIES -------------
+@import './utils/normalize';
+@import './utils/variables';
+@import './utils/placeholders';
+@import './utils/mixins';
+@import './utils/global';
+@import './utils/visually-hidden';
+
+// ------------- COMPONENTS -------------
+
+// Shared Components
+@import './components/shared/section';
+@import './components/shared/container';
+@import './components/shared/image';
+@import './components/shared/section-title';
+@import './components/shared/button';
+
+// Header
+@import './components/header/header';
+@import './components/header/header-logo';
+@import './components/header/header-buy-button';
+@import './components/header/header-navigation';
+@import './components/header/mobile-menu';
+@import './components/header/mobile-menu-button';
+@import './components/header/mobile-menu-navigation';
+@import './components/header/hero';
+@import './components/header/hero-title';
+@import './components/header/hero-buttons';
+@import './components/header/hero-backgrounds';
+
+// Products
+@import './components/products/products';
+
+// About
+@import './components/about/about';
+
+// Advantages
+@import './components/advantages/advantages';
+
+// Gallery
+@import './components/gallery/gallery';
+
+// Customer Reviews
+@import './components/customer-reviews/swiper';
+@import './components/customer-reviews/customer-reviews';
+
+// Contacts
+@import './components/contacts/contacts';
+
+// Modal
+@import './components/modal/modal';
+@import './components/modal/buy-modal';
+@import './components/modal/about-modal';
+@import './components/modal/contacts-modal';
+@import './components/modal/franchise-modal';
+
+// Footer
+@import './components/footer/footer';
